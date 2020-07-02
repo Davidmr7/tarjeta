@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Tajeta</title>
+	<title>Tarea 1</title>
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Holtwood+One+SC&family=Pacifico&family=Yellowtail&display=swap" rel="stylesheet">
@@ -19,55 +19,21 @@
             var fondo;
             if(document.getElementById("tipoImg1").checked)
                 fondo=document.getElementById("tipoImg1").value;
-            else if(document.getElementById("tipoImg2").checked)
+            else if(document.getElementById("tipoImg2").ckecked)
                 fondo=document.getElementById("tipoImg2").value;
            else fondo=document.getElementById("tipoImg3").value;
             
-             //agregamos el fondo a la tarjeta
+            //agregamos el fondo a la tarjeta
             document.getElementById("tarjeta").style.backgroundImage="url('"+fondo+"')";
             document.getElementById("tarjeta").style.backgroundRepeat="no-repeat";
             
-            //se revisa que radio fue escogido
-              var cancion;
-            if(document.getElementById("cancion1").checked)
-                cancion=document.getElementById("cancion1").value;
-            else if(document.getElementById("cancion2").checked)
-                cancion=document.getElementById("cancion2").value;
-           else cancion=document.getElementById("cancion3").value;
-            //en esta parte no estoy muy seguro si esta bien ya que no me funciona el audio cuando creo una tarjeta
-            document.getElementById("can").innerHTML="url('"+cancion+"')";
-           
-           
-            
-            //insertar el nombre 
-            var persona=document.getElementById("nombre").value;
-            document.getElementById("nombre1").innerHTML=persona;
             //insertar textos
             var titu=document.getElementById("titulotxt").value;
             document.getElementById("titulo").innerHTML=titu;
             
-            //Agregamos un subtitulo
-             var sub1=document.getElementById("sub").value;
-            document.getElementById("subtitulo").innerHTML=sub1;
-            
-            //Ingresar la descripcion
-            var titu=document.getElementById("descripciontxt").value;
-            document.getElementById("descripcion").innerHTML=titu;
-            
-            //Ingresar el remitente
-             var rem=document.getElementById("remi").value;
-            document.getElementById("remitente").innerHTML=rem;
-            
             //color de texto
-            //No aplique el color en todos lo hice para diferenciar el mensaje y el remitente
              var c=document.getElementById("colortxt").value;
             document.getElementById("titulo").style.color=c;
-            
-             var c1=document.getElementById("colortxt").value;
-            document.getElementById("subtitulo").style.color=c1;
-            
-             var c2=document.getElementById("colortxt").value;
-            document.getElementById("nombre1").style.color=c2;
             
             //tamano de texto
              var tam=document.getElementById("tamanotxt").value;
@@ -82,99 +48,54 @@
            else tipo=document.getElementById("tipotxt3").value;
             //asignar la topografia
             document.getElementById("titulo").style.fontFamily=tipo;
-            document.getElementById("subtitulo").style.fontFamily=tipo;
-            document.getElementById("nombre1").style.fontFamily=tipo;
             document.getElementById("descripcion").style.fontFamily=tipo;
-            document.getElementById("remitente").style.fontFamily=tipo;
             
             //ocultar zona de configuracion
              document.getElementById("contenido").style.display='none';
-            //cambiar el color de fondo y utilizamos el backgroundColor
-            var f=document.getElementById("colortxt2").value;
-            document.getElementById("cfondo").style.backgroundColor=f;
                 
         }
         
     </script>
 	
 </head>
-<!--Agregamos un id para mandarlo a llamar en la funcion-->
-<body id="cfondo">
+<body>
     <article id="contenido">
         <h1>Creando una tarjeta</h1>
-        
         <h2>Elige una imagen</h2>
-        <section id="sec1">
-                <input type="radio" name="tipoImg" id="tipoImg1" checked value="img/bb2.jpg">San Valentin
+                <input type="radio" name="tipoImg" id="tipoImg1" checked value="img/bb2.jpg">
                 <img src="img/bb2.jpg" height="150" width="150">
-                <input type="radio" name="tipoImg" id="tipoImg2" value="img/mot2.jpg">Motivación
-                <img src="img/mot2.jpg" height="150" width="150">
-                <input type="radio" name="tipoImg" id="tipoImg3" value="img/cumple.png">Cumpleaños
-                <img src="img/cumple.png" height="150" width="150">
-        </section>
-        <br><br>
-         <h2>Elige una cancion</h2>
-        <!--Agregamos el audio con un radio-->
-        <section id="audio">
-                <input type="radio" name="cancion" id="cancion1" checked value="audio/Como%20Te%20Extra%C3%B1o%20Amor.mp3">San Valentin
-                <audio src="audio/Como%20Te%20Extra%C3%B1o%20Amor.mp3" preload="none" controls autoplay></audio>
-                <input type="radio" name="cancion" id="cancion2" value="audio/Ahora.mp3">Motivación
-                <audio src="audio/Ahora.mp3" preload="none" controls autoplay></audio>
-                <input type="radio" name="cancion" id="cancion3" value="audio/LAS%20MA%C3%91ANITAS.mp3" >Cumpleaños
-                <audio src="audio/LAS%20MA%C3%91ANITAS.mp3" preload="none" controls autoplay></audio>
-        </section>
-        <br>
-        <br>
-        <!--Agregamos una seccion para aplicar estilo en cada parte-->
-        <section id="sec2">
+                <input type="radio" name="tipoImg" id="tipoImg2" value="img/navi2.jpg">
+                <img src="img/navi2.jpg" height="150" width="150">
+                <input type="radio" name="tipoImg" id="tipoImg3" value="img/Graduacion2.jpg">
+                <img src="img/Graduacion2.jpg" height="150" width="150">
         <h2>Agrega un titulo</h2>
-                <input type="text" id="titulotxt" placeholder="Titulo">
-        <h2>Agrega un subtitulo</h2>
-                <input type="text" id="sub" placeholder="Subtitulo">
-         <h2>Agrega el nombre de quien recibira la tarjeta</h2>
-                <input type="text" id="nombre" placeholder="Nombre">
+                <input type="text" id="titulotxt">
         <h2>Agrega una descripcion</h2>
-                <textarea id="descripciontxt" cols="30" rows="5" placeholder="Agrega el mensaje que quieres dedicar"></textarea>
-        <h2>Agrega el nombre del remitente</h2>
-                <input type="text" id="remi" placeholder="Quien escribio esta tarjeta">
-        </section>
-        <section id="sec3">
+                <textarea id="descripciontxt" cols="30" rows="5"></textarea>
         <h2>Formato de texto</h2>
                 <label for="colortxt">Color:</label>
-                <input type="color" id="colortxt"><br> <br><br>
+                <input type="color" id="colortxt"><br>
                 <label for="colortxt">Tamaño de Letra:</label>
-                <input type="range" id="tamanotxt" min="1" max="5" onchange="cambiartamanoejemplo()"> <br><br>
+                <input type="range" id="tamanotxt" min="1" max="5" onchange="cambiartamanoejemplo()">
                 <label for="colortxt" id="ejemplotexto">Ejemplo</label><br>
-                 <br><br>
+        
                 <label>Tipografia:</label><br>
-                <input type="radio" name="tipotxt" id="tipotxt1" checked value="Holtwood One SC"> 
+                <input type="radio" name="tipotxt" id="tipotxt1" checked value="Holtwood One SC">
                 <label id="tipo1">Holtwood</label>
                 <input type="radio" name="tipotxt" id="tipotxt2" checked value="Pacifico">
                 <label id="tipo2">Pacifico</label>
                 <input type="radio" name="tipotxt" id="tipotxt3" checked value="Yellowtail">
                 <label id="tipo3">Yellowtail</label>
-             <br><br>
-         <h2>Color de fondo</h2>
-                <!--Con la ayuda del input type color seleccionamos el color de fondo-->
-                <label for="colortxt2">Color de fondo:</label>
-                <input type="color" id="colortxt2" >
-                <br> <br><br>
-                <img src="img/crear.png" onclick="generartarjeta()" height="80" width="80">
+                <br>
+                <img src="img/crear.png" onclick="generartarjeta()">
                 <br><br>
-            </section>
 
 
     </article>
-   <!--Agregamos los id para cada parte en la carta-->
+    
     <article id="tarjeta">
-        <section id="tar">
         <h1 id="titulo"></h1>
-        <h2 id="subtitulo"></h2>
-        <h2 id="nombre1"></h2>
-        <h3 id="descripcion"></h3>
-        <h2 id="remitente"></h2>
-        <audio id="can"></audio>
-        </section>
+        <h2 id="descripcion"></h2>
     </article>
 	
 </body>
